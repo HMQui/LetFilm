@@ -78,6 +78,7 @@ function MobileMenu() {
 
     const handleWrapper = () => {
         setOpen((pre) => !pre);
+        setDataRender(MENU_MOBILE)
     };
 
     const handleDisplayChildren = (currData) => {
@@ -113,8 +114,6 @@ function MobileMenu() {
     const handleChangeDarkMode = useCallback(() => {
         setDark((pre) => !pre);
     }, []);
-
-    console.log('re-render');
 
     return (
         <>
