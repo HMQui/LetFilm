@@ -180,8 +180,7 @@ function MobileMenu() {
                 <FontAwesomeIcon
                     icon={faBars}
                     size="xl"
-                    className="text-white mr-5 cursor-pointer z-40"
-                    onClick={handleWrapper}
+                    className="text-white mr-5 cursor-pointer"
                 ></FontAwesomeIcon>
             </HeadlessTippy>
         </>
