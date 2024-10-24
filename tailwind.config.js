@@ -44,7 +44,10 @@ export default {
                 'g-12': '100%', // 12 columns (full width)
             },
             screens: {
-                'hover-hover': {'raw': '(hover: hover)'},
+                'mobile': '360px',
+            },
+            blur: {
+                'xs': '2px'
             }
         },
     },
