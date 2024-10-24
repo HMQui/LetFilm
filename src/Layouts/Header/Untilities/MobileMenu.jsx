@@ -78,8 +78,16 @@ function MobileMenu() {
 
     const handleWrapper = () => {
         setOpen((pre) => !pre);
-        setDataRender(MENU_MOBILE)
     };
+
+    // Reset to default menu when closing the menu
+    useEffect(() => {
+        if (!open) {
+            setDataRender(MENU_MOBILE);
+            setDataPre([]); // Also reset the previous stack
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [open]); // This effect runs whenever `open` changes
 
     const handleDisplayChildren = (currData) => {
         if (currData.children) {
@@ -180,6 +188,7 @@ function MobileMenu() {
                     icon={faBars}
                     size="xl"
                     className="text-white mr-5 cursor-pointer"
+                    onClick={handleWrapper}
                 ></FontAwesomeIcon>
             </HeadlessTippy>
         </>
