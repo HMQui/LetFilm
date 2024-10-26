@@ -56,7 +56,7 @@ function MyDropdownMenu() {
                     </DropdownMenu.Content>
                 </DropdownMenu.Root>
                 <Field className="flex gap-3">
-                    <Label className="font-bold text-primary-50 cursor-pointer">Dark Mode</Label>
+                    <Label className="font-bold text-primary-50 cursor-pointer select-none">Dark Mode</Label>
                     <Switch
                         className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-black hover:bg-primary-50 cursor-pointer"
                         onChange={handleChangeDarkMode}

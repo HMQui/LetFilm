@@ -1,9 +1,11 @@
-import { Header } from "../../Layouts";
+import { Header } from '../../Layouts';
+import { ButtonScrollUpPage } from '../../Layouts'
 
 function Home() {
-    return ( 
-        <main className="bg-white dark:bg-primary-1350 h-[2000px]">
-            <Header/>
+    return (
+        <main className="h-[10000px] dark:bg-primary-1250 relative">
+            <Header />
+            <ButtonScrollUpPage />
         </main>
     );
 }

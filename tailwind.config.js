@@ -44,11 +44,25 @@ export default {
                 'g-12': '100%', // 12 columns (full width)
             },
             screens: {
-                'mobile': '360px',
+                mobile: '360px',
             },
             blur: {
-                'xs': '2px'
-            }
+                xs: '2px',
+            },
+            keyframes: {
+                slideIn: {
+                    '0%': { transform: 'translateY(-100%)'},
+                    '100%': { transform: 'translateY(0)'},
+                },
+                slideOut: {
+                    '0%': { transform: 'translateY(0)'},
+                    '100%': { transform: 'translateY(-100%)'},
+                },
+            },
+            animation: {
+                slideIn: 'slideIn 0.4s ease-out forwards',
+                slideOut: 'slideOut 0.4s ease-out forwards',
+            },
         },
     },
     darkMode: 'class',
