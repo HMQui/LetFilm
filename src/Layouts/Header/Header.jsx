@@ -11,7 +11,7 @@ function Header() {
             const y = window.scrollY;
 
             // Always show header when at the top
-            if (y === 0) {
+            if (y <= 0) {
                 setIsVisible(true);
                 return; // Exit early if at the top
             }
@@ -50,7 +50,9 @@ function Header() {
                 mobile:px-[5px]
                 mobile:h-[70px]
                 fixed
-                ${isVisible ? 'animate-slideIn' : 'animate-slideOut'}`}
+                max-lg:animate-none
+                ${isVisible ? 'animate-slideIn' : 'animate-slideOut'}
+                `}
             >
                 <Navbar />
                 <Untilities />
