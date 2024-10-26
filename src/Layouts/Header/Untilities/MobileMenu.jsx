@@ -127,7 +127,8 @@ function MobileMenu() {
         <>
             {open && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs z-40"
+                    className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs min-h-dvh z-40 pointer-events-auto"
+                    style={{ pointerEvents: 'auto' }} 
                     onMouseDown={handleWrapper}
                 ></div>
             )}

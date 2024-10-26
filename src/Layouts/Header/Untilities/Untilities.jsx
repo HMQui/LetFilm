@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { setData, getData } from '../../../services/functions/localStorage';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, memo } from 'react';
 import MobileMenu from './MobileMenu';
 
+// eslint-disable-next-line react/prop-types
 function MyDropdownMenu() {
     const localStorage = getData();
     const [dark, setDark] = useState(localStorage.darkMode ?? false);
@@ -73,4 +74,4 @@ function MyDropdownMenu() {
     );
 }
 
-export default MyDropdownMenu;
+export default memo(MyDropdownMenu);

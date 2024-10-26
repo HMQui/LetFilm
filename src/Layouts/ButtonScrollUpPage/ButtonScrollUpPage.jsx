@@ -29,7 +29,7 @@ function ButtonScrollUpPage() {
         <>
             {isVisible && (
                 <button
-                    className="fixed right-14 top-[75%] w-8 h-8 border-solid border-[0.5px] border-primary-1350 opacity-70 rounded-full flex items-center justify-center dark:bg-primary-950 dark:border-primary-50"
+                    className="fixed right-14 top-[75%] w-8 h-8 border-solid border-[0.5px] border-primary-1350 opacity-70 rounded-full flex items-center justify-center dark:bg-primary-950 dark:border-primary-50 z-0"
                     onClick={handleClick}
                 >
                     <FontAwesomeIcon

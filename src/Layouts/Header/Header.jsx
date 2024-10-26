@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, memo } from 'react';
 import Navbar from './Navbar/Navbar';
 import Untilities from './Untilities/Untilities';
 
@@ -48,7 +48,7 @@ function Header() {
                     animate-slideIn`}
                 >
                     <Navbar />
-                    <Untilities />
+                    <Untilities/>
                 </header>
             ) : (
                 <header
@@ -70,11 +70,11 @@ function Header() {
                 `}
                 >
                     <Navbar />
-                    <Untilities />
+                    <Untilities/>
                 </header>
             )}
         </>
     );
 }
 
-export default Header;
+export default memo(Header);
