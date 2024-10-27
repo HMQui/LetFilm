@@ -77,14 +77,26 @@ function MobileMenu() {
     const [open, setOpen] = useState(false);
 
     const handleWrapper = () => {
-        setOpen((pre) => !pre);
+        setOpen((pre) => {
+            const nextState = !pre;
+    
+            // Disable scrolling when the menu is open
+            if (nextState) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = ''; // Re-enable scrolling when closed
+            }
+    
+            return nextState;
+        });
     };
 
     // Reset to default menu when closing the menu
     useEffect(() => {
         if (!open) {
+            document.body.style.overflow = ''; // Re-enable scrolling when the menu is closed
             setDataRender(MENU_MOBILE);
-            setDataPre([]); // Also reset the previous stack
+            setDataPre([]);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [open]); // This effect runs whenever `open` changes
@@ -127,7 +139,7 @@ function MobileMenu() {
         <>
             {open && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs w-full h-dvh z-40 pointer-events-auto"
+                    className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs w-full h-dvh z-40 overflow-hidden"
                     style={{ pointerEvents: 'auto' }} 
                     onMouseDown={handleWrapper}
                 ></div>
@@ -135,7 +147,6 @@ function MobileMenu() {
             <HeadlessTippy
                 interactive
                 trigger="click"
-                delay={[0, 0]}
                 render={(attrs) => (
                     <div {...attrs} className="w-fit h-fit bg-white shadow-lg rounded min-w-[125px]">
                         {dataPre.length > 0 && (

@@ -1,27 +1,25 @@
-import { useEffect, useRef, useState, memo } from 'react';
+import { useEffect, useRef, memo } from 'react';
 import Navbar from './Navbar/Navbar';
 import Untilities from './Untilities/Untilities';
 
 function Header() {
     const lastScrollY = useRef(0);
-    const [isVisible, setIsVisible] = useState(true);
-
+    
     useEffect(() => {
         const handleScroll = () => {
             const y = window.scrollY;
 
-            // Always show header when at the top
-            if (y <= 0) {
-                setIsVisible(true);
-                return; // Exit early if at the top
+            if (y <= 50) {
+                document.querySelector('header').style.top = '0'
+                return
             }
 
             if (y > lastScrollY.current) {
                 // Scrolling down
-                setIsVisible(false);
+                document.querySelector('header').style.top = '-70px'
             } else {
                 // Scrolling up
-                setIsVisible(true);
+                document.querySelector('header').style.top = '0'
             }
             lastScrollY.current = y; // Update last scroll position
         };
@@ -50,8 +48,7 @@ function Header() {
                 mobile:px-[5px]
                 mobile:h-[70px]
                 fixed
-                max-lg:animate-none
-                ${isVisible ? 'animate-slideIn' : 'animate-slideOut'}
+                duration-500
                 `}
             >
                 <Navbar />
