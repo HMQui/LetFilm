@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_KEY = `api_key=${import.meta.env.VITE_API_KEY}`;
+import VITE_API_KEY from '../../../api_key';
+
+const API_KEY = `api_key=${VITE_API_KEY}`;
 const get = async (api) => {
     return await axios.get(api);
 };
