@@ -49,6 +49,7 @@ function Header() {
                 mobile:h-[70px]
                 fixed
                 duration-500
+                z-10
                 `}
             >
                 <Navbar />

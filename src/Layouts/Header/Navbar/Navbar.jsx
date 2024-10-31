@@ -19,9 +19,9 @@ function Navbar() {
                         trigger="mouseenter focus"
                         render={(attrs) => (
                             <ul
-                                tabIndex="1"
+                                tabIndex="-1"
                                 {...attrs}
-                                className="bg-white rounded py-2 w-[175px] shadow-lg dark:bg-gray-100"
+                                className="bg-white rounded py-2 w-[175px] shadow-lg dark:bg-gray-100 z-[1000000]"
                             >
                                 <li className="py-2 px-4 text-base text-primary-1150 hover:bg-gray-50 dark:hover:text-amber-50 dark:hover:bg-primary-1150">
                                     <Link to={route.Movie} className="block w-full h-full cursor-pointer">

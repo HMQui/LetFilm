@@ -10,7 +10,7 @@ function Home() {
     }, []);
 
     return (
-        <main className="flex flex-col dark:bg-primary-1250 relative w-dvw h-fit">
+        <main className="flex flex-col dark:bg-primary-1250 relative w-dvw  h-[2000px]">
             <Header/>
             <ButtonScrollUpPage />
             <BodyHome/>
