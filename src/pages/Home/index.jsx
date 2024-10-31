@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Header } from '../../Layouts';
 import { ButtonScrollUpPage } from '../../Layouts'
+import { BodyHome } from './BodyHome'
 
 function Home() {
     useEffect(() => {
@@ -9,9 +10,10 @@ function Home() {
     }, []);
 
     return (
-        <main className="h-[10000px] dark:bg-primary-1250 relative">
+        <main className="flex flex-col dark:bg-primary-1250 relative w-dvw h-fit">
             <Header/>
             <ButtonScrollUpPage />
+            <BodyHome/>
         </main>
     );
 }

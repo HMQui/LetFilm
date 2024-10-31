@@ -7,7 +7,7 @@ function ButtonScrollUpPage() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY >= 200) {
+            if (window.scrollY >= 500) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
