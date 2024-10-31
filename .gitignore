@@ -25,5 +25,4 @@ dist-ssr
 
 .vscode
 .prettierrc
-.api_key
 .evn
