@@ -1,9 +1,10 @@
-import { SearchHome } from './components';
+import { SearchHome, TrendingSideBar } from './components';
 
 function BodyHome() {
     return (
-        <div className="2xl:px-g-1 lg:px-0 absolute top-[70px] flex flex-col w-g-12 dark:bg-primary-1250">
+        <div className="lg:px-0 xl:px-g-1 absolute top-[69px] flex flex-col w-g-12 dark:bg-primary-1250">
             <SearchHome />
+            <TrendingSideBar />
         </div>
     );
 }

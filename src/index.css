@@ -1,29 +1,46 @@
-@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  font-family: "Rethink Sans", sans-serif;
-  font-optical-sizing: auto;
+    font-family: 'Rethink Sans', sans-serif;
+    font-optical-sizing: auto;
 }
 
 @layer utilities {
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f5f5f4;
-  }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f5f5f4;
+    }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #d1d5db;
-    border-radius: 10px;
-  }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #d1d5db;
+        border-radius: 10px;
+    }
 
-  /* .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* Dark mode scrollbar */
+
+    .custom-scrollbar-dark::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    .custom-scrollbar-dark::-webkit-scrollbar-track {
+        background: #f5f5f4;
+    }
+
+    .custom-scrollbar-dark::-webkit-scrollbar-thumb {
+        background-color: #9ca3af;
+        border-radius: 10px;
+    }
+
+    /* .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: #064e3b;
   } */
+
 }

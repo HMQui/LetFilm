@@ -1,4 +1,4 @@
-import { Home, Movie, Search } from "../pages"
+import { Home, Movie, Search, MovieDetail } from "../pages"
 
 const root = "/LetFilm/"
 
@@ -14,7 +14,11 @@ export const publicRoute = [
     {
         component: Search,
         path: root + "Search/"
-    }
+    },
+    {
+        component: MovieDetail,
+        path: root + "MovieDetail/:id"
+    },
 ]
 
 export const route = {

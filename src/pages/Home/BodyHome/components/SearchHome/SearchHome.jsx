@@ -18,7 +18,7 @@ function SearchHome() {
     }, []);
 
     return (
-        <div className="relative md:py-[35px] sm:py-[20px] mobile:py-[15px] w-full h-[281px] bg-gradient-to-r from-primary-1050 to-primary-200 dark:from-primary-1150 dark:to-primary-950 z-0">
+        <div className="relative md:py-[35px] sm:py-[20px] mobile:py-[15px] w-full h-[281px] bg-gradient-to-r from-primary-1050 to-primary-200 dark:from-primary-1150 dark:to-primary-950 z-1">
             <div
                 style={{ backgroundImage: `url('${sourceBackground}')` }}
                 className="absolute inset-0 w-full h-[281px] bg-cover bg-center opacity-20 z-0"

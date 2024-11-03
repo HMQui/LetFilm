@@ -59,10 +59,26 @@ export default {
                     '0%': { transform: 'translateY(0)'},
                     '100%': { transform: 'translateY(-100%)'},
                 },
+                slideToL: {
+                    '0%': { transform: 'translateX(-100%)'},
+                    '100%': { transform: 'translateY(0)'},
+                },
+                slideOutX: {
+                    '0%': { transform: 'translateY(0)'},
+                    '100%': { transform: 'translateY(-100%)'},
+                },
+                anim: {
+                    '100%': {
+                        strokeDashoffset: '0'
+                    }
+                }
             },
             animation: {
                 slideIn: 'slideIn 0.4s ease-out forwards',
                 slideOut: 'slideOut 0.4s ease-out forwards',
+                slideToL: 'slideToL 0.4s ease-out forwards',
+                anim: 'anim 2s linear forward',
+                'spin-custom': 'spin 1.5s linear infinite',
             },
         },
     },
