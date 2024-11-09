@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function ProgressCircle({ rate }) {
+function ProgressCircle({ rate, bottom, left }) {
     let gradientColor = '#fff';
     if (rate < 5) {
         gradientColor = '#ef4444';
@@ -15,7 +15,10 @@ function ProgressCircle({ rate }) {
     const progress = (1 - rate / 10) * circleCircumference;
 
     return (
-        <div className="absolute bottom-[-18px] left-2 h-12 w-12 bg-sky-950 rounded-full">
+        <div 
+            className={`absolute h-12 w-12 bg-sky-950 rounded-full`}
+            style={{ bottom: bottom, left: left }}
+        >
             <div className="rounded-full h-11 w-11 flex justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <div className="rounded-full h-8 w-8"></div>
             </div>
@@ -51,5 +54,7 @@ function ProgressCircle({ rate }) {
 export default ProgressCircle;
 
 ProgressCircle.propTypes = {
-    rate: PropTypes.number.isRequired
+    rate: PropTypes.number.isRequired,
+    bottom: PropTypes.string,
+    left: PropTypes.string,
 }

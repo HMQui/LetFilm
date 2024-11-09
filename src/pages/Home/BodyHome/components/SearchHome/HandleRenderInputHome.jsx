@@ -14,14 +14,19 @@ function HandleRenderInputHome({ valueInput }) {
 
     useEffect(() => {
         const fetchTrending = async () => {
-            setLoading(true); // Set loading to true before fetching data
-            const trendingData = await getTrendingAll('day');
-            setTrendingAll(trendingData);
-            if (valueInput.trim()) {
-                const data = await queryMulti(valueInput);
-                setDataGotValue(data);
+            try {
+                setLoading(true); // Set loading to true before fetching data
+                const trendingData = await getTrendingAll('day');
+                setTrendingAll(trendingData);
+                if (valueInput.trim()) {
+                    const data = await queryMulti(valueInput);
+                    setDataGotValue(data);
+                }
+                setLoading(false); // Set loading to false after fetching data
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                setLoading(true)
             }
-            setLoading(false); // Set loading to false after fetching data
         };
         fetchTrending();
     }, [valueInput]);
@@ -125,7 +130,11 @@ function HandleRenderInputHome({ valueInput }) {
             {loading ? (
                 // Show Spinner when loading is true
                 <div className="flex justify-center items-center py-11">
-                    <FontAwesomeIcon icon={faSpinner} size='xl' className='animate-spin text-primary-1350'></FontAwesomeIcon>
+                    <FontAwesomeIcon
+                        icon={faSpinner}
+                        size="xl"
+                        className="animate-spin text-primary-1350"
+                    ></FontAwesomeIcon>
                 </div>
             ) : (
                 // Show content when loading is false

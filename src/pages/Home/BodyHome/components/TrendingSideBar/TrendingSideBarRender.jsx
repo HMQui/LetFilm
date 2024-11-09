@@ -17,10 +17,10 @@ function TrendingSideBarRender({ option }) {
             try {
                 const data = await trendingMovie(option);
                 setDataRender(data);
+                setLoading(false)
             } catch (error) {
                 console.error('Error fetching trending movies:', error);
-            } finally {
-                setLoading(false);
+                setLoading(true)
             }
         };
 
@@ -39,7 +39,7 @@ function TrendingSideBarRender({ option }) {
                         return (
                             <Link
                                 key={render.id}
-                                to={`/movie/${render.id}`}
+                                to={`movie/${render.id}`}
                                 className="lg:w-[15%] md:w-[20%] sm:w-[30%] mobile:w-[40%] h-[90%] flex-shrink-0 flex flex-col justify-between items-start group"
                             >
                                 <div
@@ -48,7 +48,7 @@ function TrendingSideBarRender({ option }) {
                                         backgroundImage: `url(https://image.tmdb.org/t/p/w500${render.poster_path})`,
                                     }}
                                 >
-                                    <ProgressCircle rate={render.vote_average} />
+                                    <ProgressCircle rate={render.vote_average} bottom={'-18px'} left={'8px'}/>
                                 </div>
                                 <div className='dark:text-primary-50'>
                                     <h3 className="mt-6 w-full h-[50px] overflow-hidden font-bold select-none">
