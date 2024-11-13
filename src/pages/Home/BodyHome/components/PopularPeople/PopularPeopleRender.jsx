@@ -43,7 +43,7 @@ function PopularPeopleRender() {
                     <FontAwesomeIcon icon={faSpinner} className="text-[3rem] animate-spin-custom" />
                 </div>
             ) : (
-                <div className="mt-8 grid grid-cols-2 gap-4">
+                <div className="mt-8 grid md:grid-cols-2 mobile:grid-cols-1 gap-4">
                     {dataRender.map((render) => {
                         return (
                             <Link
