@@ -4,7 +4,7 @@ function MovieDetail() {
     return ( 
         <div>
             <Header/>
-            <h1>Movie</h1>
+
         </div>
     );
 }

@@ -16,9 +16,9 @@ function TopRated() {
             <div className="flex flex-row justify-start items-center gap-4">
                 <FontAwesomeIcon
                     icon={faStar}
-                    className="text-[2.4rem] text-rose-600 select-none mt-[-8px]"
+                    className="md:text-[2.4rem] mobile:text-[1.8rem] text-rose-600 select-none mt-[-8px]"
                 ></FontAwesomeIcon>
-                <h3 className="text-[2.4rem] text-primary-1350 dark:text-primary-50 font-bold select-none">TopRated</h3>
+                <h3 className="md:text-[2.4rem] mobile:text-[1.8rem] text-primary-1350 dark:text-primary-50 font-bold select-none">TopRated</h3>
                 <input
                     type="checkbox"
                     id="switch-movies-tv"

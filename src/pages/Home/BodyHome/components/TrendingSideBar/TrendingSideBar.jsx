@@ -16,9 +16,9 @@ function TrendingSideBar() {
             <div className="flex flex-row justify-start items-center gap-4">
                 <FontAwesomeIcon
                     icon={faArrowTrendUp}
-                    className="text-[2.4rem] text-rose-600 select-none"
+                    className="md:text-[2.4rem] mobile:text-[1.8rem] text-rose-600 select-none"
                 ></FontAwesomeIcon>
-                <h3 className="text-[2.4rem] text-primary-1350 dark:text-primary-50 font-bold select-none">Trending</h3>
+                <h3 className="md:text-[2.4rem] mobile:text-[1.8rem] text-primary-1350 dark:text-primary-50 font-bold select-none">Trending</h3>
                 <input type="checkbox" id="switch-day-week" className="hidden" onClick={(e) => handleChooseOption(e)} />
                 <label
                     htmlFor="switch-day-week"
