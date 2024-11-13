@@ -34,7 +34,7 @@ function TrendingSideBarRender({ option }) {
                     <FontAwesomeIcon icon={faSpinner} className='text-[3rem] animate-spin-custom'></FontAwesomeIcon>
                 </div>
             ) : (
-                <div className="mt-5 px-3 relative w-full min-h-[450px] bg-white dark:bg-primary-1150 flex flex-row justify-start items-center gap-3 overflow-x-auto overflow-y-hidden custom-scrollbar dark:custom-scrollbar-dark">
+                <div className="mt-5 px-3 relative w-full min-h-[450px] bg-white dark:bg-primary-1150 flex flex-row justify-start items-between gap-3 overflow-x-auto overflow-y-hidden custom-scrollbar dark:custom-scrollbar-dark">
                     {dataRender.map((render) => {
                         return (
                             <Link

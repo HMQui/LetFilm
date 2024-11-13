@@ -1,4 +1,4 @@
-import { SearchHome, TrendingSideBar, TopRated } from './components';
+import { SearchHome, TrendingSideBar, TopRated, PopularPeople } from './components';
 
 
 function BodyHome() {
@@ -7,6 +7,7 @@ function BodyHome() {
             <SearchHome />
             <TrendingSideBar />
             <TopRated />
+            <PopularPeople />
         </div>
     );
 }

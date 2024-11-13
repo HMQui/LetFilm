@@ -54,7 +54,7 @@ function TopRatedSideBarRender({ option }) {
                     <FontAwesomeIcon icon={faSpinner} className="text-[3rem] animate-spin-custom" />
                 </div>
             ) : (
-                <div className="w-full h-[400px] relative bg-primary-1050">
+                <div className="mt-5 w-full h-[400px] relative bg-primary-1050">
                     <div
                         className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-[400px] opacity-10 z-0"
                         style={{ backgroundImage: `url('${imgURL}')` }}

@@ -1,0 +1,1 @@
+export { default as PopularPeople } from './PopularPeople'

@@ -29,7 +29,7 @@ function Video({ type, id }) {
 
 
     return (
-        <div className="lg:py-20 lg:px-36 md:px-20 md:py-36 sm:px-10 sm:py-36 mobile:px-3 mobile:py-52 h-lvh w-lvw">
+        <div className="lg:py-20 lg:px-36 md:px-20 md:py-36 sm:px-10 sm:py-36 mobile:px-3 mobile:py-72 h-lvh w-lvw">
             {videoKey && (
                 <iframe
                     src={`https://www.youtube.com/embed/${videoKey}?&embed=1`}

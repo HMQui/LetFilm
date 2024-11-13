@@ -23,7 +23,7 @@ function ProgressCircle({ rate, bottom, left }) {
                 <div className="rounded-full h-8 w-8"></div>
             </div>
             <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[0.7rem] font-semibold text-primary-50 select-none">
-                {Math.round(rate * 10)}%
+                {rate !== 0 ? `${Math.round(rate * 10)}%` : 'Unknow'}
             </span>
             <svg
                 xmlns="http://www.w3.org/2000/svg"

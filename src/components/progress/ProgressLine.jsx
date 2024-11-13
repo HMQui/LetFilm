@@ -1,15 +1,27 @@
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
-function ProgressLine({ progress }) {
-    return ReactDOM.createPortal(
-        <div className="fixed top-0 left-0 w-full h-1 bg-gray-300 z-50">
+function ProgressLine({ max, component }) {
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+        const per = (component / max) * 100;
+        setWidth(per);
+    }, [max, component]);
+
+    return (
+        <div className="w-full h-2 relative bg-gray-50 rounded-xl overflow-hidden">
             <div
-                className="h-full bg-red-800 transition-all duration-300 ease-in-out"
-                style={{ width: `${progress}%` }}
+                style={{ width: `${width}%`, transition: 'width 2.5s ease' }}
+                className="h-full bg-gradient-to-r from-orange-400 to-red-500 absolute inset-0 rounded-xl"
             ></div>
-        </div>,
-        document.body,
+        </div>
     );
 }
 
 export default ProgressLine;
+
+ProgressLine.propTypes = {
+    max: PropTypes.number.isRequired,
+    component: PropTypes.number.isRequired,
+};
