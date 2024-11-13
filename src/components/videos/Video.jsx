@@ -27,11 +27,12 @@ function Video({ type, id }) {
         }
     }, [type, id, videoKey]);
 
+
     return (
         <div className="lg:py-20 lg:px-36 md:px-20 md:py-36 sm:px-10 sm:py-36 mobile:px-3 mobile:py-52 h-lvh w-lvw">
             {videoKey && (
                 <iframe
-                    src={`https://www.youtube.com/embed/${videoKey}?si=2-qEfdsv354ENlAx`}
+                    src={`https://www.youtube.com/embed/${videoKey}?&embed=1`}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
