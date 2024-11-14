@@ -1,9 +1,8 @@
 import { SearchHome, TrendingSideBar, TopRated, PopularPeople } from './components';
 
-
 function BodyHome() {
     return (
-        <div className="lg:px-0 xl:px-g-1 absolute top-[69px] flex flex-col w-g-12 dark:bg-primary-1250">
+        <div className="mobile:px-0 xl:px-g-1 flex flex-col w-g-12 dark:bg-primary-1250 mt-[69px]">
             <SearchHome />
             <TrendingSideBar />
             <TopRated />

@@ -49,14 +49,14 @@ function PopularPeopleRender() {
                             <Link
                                 key={render.id}
                                 to={`people/${render.id}`}
-                                className="flex flex-row gap-4 justify-start items-center group"
+                                className="px-2 flex flex-row gap-4 justify-start items-center group"
                             >
                                 <div
                                     style={{ backgroundImage: `url('${getImg + render.profile_path}')` }}
                                     className="w-24 h-20 bg-cover bg-center rounded-full overflow-hidden"
                                 ></div>
                                 <div className="w-full flex flex-col justify-around items-start">
-                                    <h4 className="font-bold text-xl text-primary-1350 group-hover:text-orange-400 dark:text-primary-50">
+                                    <h4 className="font-bold text-xl text-primary-1350 sm:group-hover:text-orange-400 dark:text-primary-50">
                                         {render.name}
                                     </h4>
                                     <h5 className="text-sm text-primary-1350 dark:text-primary-50">

@@ -7,7 +7,7 @@ function PopularPeople() {
 
     return (
         <div className='py-10 bg-white w-full dark:bg-primary-1150'>
-            <div className='flex flex-row justify-start items-center gap-4'>
+            <div className='p-5 flex flex-row justify-start items-center gap-4'>
                 <FontAwesomeIcon
                     icon={faUser}
                     className="md:text-[2.4rem] mobile:text-[1.8rem] text-rose-600 select-none mt-[-8px]"
