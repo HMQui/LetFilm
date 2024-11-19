@@ -1,8 +1,12 @@
-import { Home, Movie, Search, MovieDetail, TVDetail, PeopleDetail, PeopleMain } from "../pages"
+import { Home, Movie, Search, MovieDetail, TVDetail, PeopleDetail, PeopleMain, NotFound } from "../pages"
 
 const root = "/LetFilm/"
 
 export const publicRoute = [
+    {
+        component: NotFound,
+        path: '*'
+    },
     {
         component: Home,
         path: root
