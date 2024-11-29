@@ -1,7 +1,7 @@
 import { useEffect, useState, memo } from 'react';
 
 import { trendingAll as getTrendingAll } from '../../../../../services/functions/api_call';
-import InputSearchHome from './InputSearchHome';
+import { InputSearchHome } from './components';
 
 function SearchHome() {
     const [sourceBackground, setSourceBackGround] = useState('');

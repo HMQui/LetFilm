@@ -83,5 +83,37 @@ export default {
         },
     },
     darkMode: 'class',
-    plugins: [],
+    plugins: [
+        function ({ addComponents }) {
+            addComponents({
+                '.range-input': {
+                    position: 'relative',
+                },
+                '.range-input input': {
+                    position: 'absolute',
+                    top: '-24px',
+                    height: '5px',
+                    width: '100%',
+                    background: 'transparent',
+                    pointerEvents: 'none',
+                    '-webkit-appearance': 'none',
+                },
+                'input[type="range"]::-webkit-slider-thumb': {
+                    height: '17px',
+                    width: '17px',
+                    borderRadius: '50%',
+                    pointerEvents: 'auto',
+                    '-webkit-appearance': 'none',
+                    background: '#047857', // Use a primary color
+                },
+                'input[type="range"]::-moz-range-thumb': {
+                    height: '17px',
+                    width: '17px',
+                    borderRadius: '50%',
+                    pointerEvents: 'auto',
+                    background: '#047857', // For Firefox compatibility
+                },
+            });
+        },
+    ],
 };

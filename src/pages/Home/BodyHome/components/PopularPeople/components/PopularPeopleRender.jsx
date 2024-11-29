@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-import { popularPeople, getImg } from '../../../../../services/functions/api_call';
-import ProgressLine from '../../../../../components/progress/ProgressLine';
+import { popularPeople, getImg } from '../../../../../../services/functions/api_call'
+import ProgressLine from '../../../../../../components/progress/ProgressLine';
 
 function PopularPeopleRender() {
     const [loading, setLoading] = useState(true);

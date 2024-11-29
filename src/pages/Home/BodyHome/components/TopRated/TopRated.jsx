@@ -1,8 +1,8 @@
 import { useState, memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import TopRatedSideBarRender from './TopRatedSideBarRender';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+
+import { TopRatedSideBarRender } from './components';
 
 function TopRated() {
     const [option, setOption] = useState('movie');

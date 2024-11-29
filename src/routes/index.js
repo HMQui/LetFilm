@@ -39,8 +39,8 @@ export const publicRoute = [
 
 export const route = {
     Home: root,
-    Movie: root + "Movie/",
-    NowPlaying: root + "Movie/" + "now-playing/",
-    Upcoming: root + "Movie/" + "upcoming/",
-    TopRated: root + "Movie/" + "top-rated/",
+    Movie: root + "movie/",
+    NowPlaying: root + "movie/" + "now-playing/",
+    Upcoming: root + "movie/" + "upcoming/",
+    TopRated: root + "movie/" + "top-rated/",
 }

@@ -2,7 +2,7 @@ import { useState, memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons';
-import TrendingSideBarRender from './TrendingSideBarRender';
+import { TrendingSideBarRender } from './components';
 
 function TrendingSideBar() {
     const [option, setOption] = useState('day');

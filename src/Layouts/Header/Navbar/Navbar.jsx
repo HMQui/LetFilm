@@ -95,8 +95,8 @@ function Navbar() {
                 </div>
             </div>
             <div className="items-center mobile:flex md:hidden">
-                <Link to={route.Home} className='w-[30%] h-[70%] p-[5px] bg-amber-50 rounded select-none'>
-                    <img src={logo} alt='Logo' className='w-full h-full'></img>
+                <Link to={route.Home} className="w-[30%] h-[70%] p-[5px] bg-amber-50 rounded select-none">
+                    <img src={logo} alt="Logo" className="w-full h-full"></img>
                 </Link>
             </div>
         </>

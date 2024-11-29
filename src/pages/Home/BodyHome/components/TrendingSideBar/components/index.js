@@ -1,0 +1,1 @@
+export { default as TrendingSideBarRender } from './TrendingSideBarRender'

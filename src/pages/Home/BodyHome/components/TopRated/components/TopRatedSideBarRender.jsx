@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faSpinner, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-import { topRatedMovie, topRatedTV, getImg } from '../../../../../services/functions/api_call';
-import ProgressCircle from '../../../../../components/progress/ProgressCircle';
-import { Video } from '../../../../../components/videos';
-import { WrapperFullScreen } from '../../../../../components/wrappers'
+import { topRatedMovie, topRatedTV, getImg } from '../../../../../../services/functions/api_call';
+import ProgressCircle from '../../../../../../components/progress/ProgressCircle';
+import { Video } from '../../../../../../components/videos';
+import { WrapperFullScreen } from '../../../../../../components/wrappers'
 
 function TopRatedSideBarRender({ option }) {
     const [loading, setLoading] = useState(true);

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { queryMulti } from '../../../../../services/functions/api_call';
-import { trendingAll as getTrendingAll } from '../../../../../services/functions/api_call';
+import { queryMulti } from '../../../../../../services/functions/api_call';
+import { trendingAll as getTrendingAll } from '../../../../../../services/functions/api_call';
 import { faArrowTrendUp, faFilm, faMagnifyingGlass, faSpinner, faTv, faUser } from '@fortawesome/free-solid-svg-icons';
 
 function HandleRenderInputHome({ valueInput }) {
@@ -24,8 +24,8 @@ function HandleRenderInputHome({ valueInput }) {
                 }
                 setLoading(false); // Set loading to false after fetching data
             } catch (error) {
-                console.error("Error fetching data:", error);
-                setLoading(true)
+                console.error('Error fetching data:', error);
+                setLoading(true);
             }
         };
         fetchTrending();
