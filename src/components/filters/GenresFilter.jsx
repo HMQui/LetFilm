@@ -1,9 +1,9 @@
 import { useEffect, useState, memo } from 'react';
 import PropTypes from 'prop-types';
 
-import { movieGenres } from '../../services/functions/api_call';
+import { listGenres } from '../../services/functions/api_call';
 
-function GenresFilter({ getDataFromGenresFilter }) {
+function GenresFilter({ getDataFromGenresFilter, type = 'movie' }) {
     const [dataRender, setDataRender] = useState([]);
     const [dataSubmit, setDataSubmit] = useState([]);
 
@@ -16,7 +16,7 @@ function GenresFilter({ getDataFromGenresFilter }) {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const data = await movieGenres();
+                const data = await listGenres(type);
                 setDataRender(data);
             } catch {
                 throw new Error('Failed to call Movie Genre List');
@@ -24,6 +24,7 @@ function GenresFilter({ getDataFromGenresFilter }) {
         };
 
         fetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleChooseOption = (option) => {
@@ -64,4 +65,5 @@ export default memo(GenresFilter);
 
 GenresFilter.propTypes = {
     getDataFromGenresFilter: PropTypes.func.isRequired,
+    type: PropTypes.string,
 };

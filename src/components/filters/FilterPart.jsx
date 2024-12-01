@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import GenresFilter from '../../../../../../components/filters/GenresFilter';
-import LanguagesFilter from '../../../../../../components/filters/LanguagesFilter';
-import ReleaseDate from '../../../../../../components/filters/ReleaseDate';
-import VoteAverageFilter from '../../../../../../components/filters/VoteAverageFilter';
-import KeywordsFilter from '../../../../../../components/filters/KeywordsFilter';
+import GenresFilter from './GenresFilter';
+import LanguagesFilter from './LanguagesFilter';
+import ReleaseDate from './ReleaseDate';
+import VoteAverageFilter from './VoteAverageFilter';
+import KeywordsFilter from './KeywordsFilter';
 
-function MoviePopularFilter({ getDataFromFilter }) {
+function MoviePopularFilter({ getDataFromFilter, type = 'movie' }) {
     const [showFull, setShowFull] = useState(true);
     const [dataSubmit, setDataSubmit] = useState([]);
 
@@ -182,9 +182,9 @@ function MoviePopularFilter({ getDataFromFilter }) {
                     showFull ? 'block' : 'hidden'
                 } pt-3 border-t flex flex-col justify-start items-start gap-3`}
             >
-                <GenresFilter getDataFromGenresFilter={getDataFromGenresFilter} />
+                <GenresFilter getDataFromGenresFilter={getDataFromGenresFilter} type={type}/>
                 <LanguagesFilter getDataFromLanguagesFilter={getDataFromLanguagesFilter} />
-                <ReleaseDate getDataFromReleaseDateFilter={getDataFromReleaseDateFilter} />
+                <ReleaseDate getDataFromReleaseDateFilter={getDataFromReleaseDateFilter} type={type}/>
                 <VoteAverageFilter getDataFromVoteAverageFilter={getDataFromVoteAverageFilter} />
                 <KeywordsFilter getDataFromKeywordsFilter={getDataFromKeywordsFilter} />
             </div>
@@ -196,4 +196,5 @@ export default memo(MoviePopularFilter);
 
 MoviePopularFilter.propTypes = {
     getDataFromFilter: PropTypes.func.isRequired,
+    type: PropTypes.string,
 };

@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const API_KEY = 'api_key=803ff6df56be7706d5cc03bccc570e58';
-const BASE_URL = 'https://api.themoviedb.org/3/discover/movie?';
 
 const get = async (api) => {
     try {
@@ -13,10 +12,10 @@ const get = async (api) => {
     }
 };
 
-const moviePopularFilter = async (filterItem, page) => {                
+const filterFunction = async (filterItem, page, type) => {                
     try {
         // Start with base URL and API key
-        let url = `${BASE_URL}${API_KEY}`;
+        let url = `https://api.themoviedb.org/3/discover/${type}?${API_KEY}`;
 
         // Append additional filters
         filterItem.forEach((item) => {
@@ -76,4 +75,4 @@ const moviePopularFilter = async (filterItem, page) => {
     }
 };
 
-export { moviePopularFilter };
+export { filterFunction };

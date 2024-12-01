@@ -6,9 +6,9 @@ const get = async (api) => {
 };
 
 // [GET] ListMovie Genres
-const movieGenres = async () => {
+const listGenres = async (type = 'movie') => {
     try {
-        const res = await get('https://api.themoviedb.org/3/genre/movie/list?' + API_KEY);
+        const res = await get(`https://api.themoviedb.org/3/genre/${type}/list?` + API_KEY);
         return res.data.genres;
     } catch {
         throw new Error('Fail to call API');
@@ -25,4 +25,4 @@ const Languges = async () => {
     }
 };
 
-export { movieGenres, Languges }
+export { listGenres, Languges }

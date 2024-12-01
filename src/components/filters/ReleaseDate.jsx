@@ -1,7 +1,7 @@
 import { useEffect, useState, memo } from 'react';
 import PropTypes from 'prop-types';
 
-function ReleaseDate({ getDataFromReleaseDateFilter }) {
+function ReleaseDate({ getDataFromReleaseDateFilter, type = 'movie' }) {
     const [dataSubmit, setDataSubmit] = useState([]);
     const [releaseDateGte, setReleaseDateGte] = useState();
     const [releaseDateLte, setReleaseDateLte] = useState();
@@ -22,20 +22,20 @@ function ReleaseDate({ getDataFromReleaseDateFilter }) {
                 releaseDateLte ? {
                     type: 'Release Date Lte',
                     value: {
-                        key: 'primary_release_date.lte',
+                        key: type === 'movie' ? 'primary_release_date.lte' : 'first_air_date.lte',
                         value: releaseDateLte,
                     },
                 } : null,
                 releaseDateGte ? {
                     type: 'Release Date Gte',
                     value: {
-                        key: 'primary_release_date.gte',
+                        key: type === 'movie' ? 'primary_release_date.gte' : 'first_air_date.gte',
                         value: releaseDateGte,
                     },
                 } :  null,
             ];
         });
-    }, [releaseDateGte, releaseDateLte]);
+    }, [releaseDateGte, releaseDateLte, type]);
 
     return (
         <div className="w-full py-3 border-b flex flex-col flex-wrap justify-start items-start gap-3">
@@ -67,4 +67,5 @@ export default memo(ReleaseDate);
 
 ReleaseDate.propTypes = {
     getDataFromReleaseDateFilter: PropTypes.func.isRequired,
+    type: PropTypes.string,
 };

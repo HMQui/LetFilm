@@ -15,6 +15,26 @@ const popularMovie = async (page = 1) => {
     }
 };
 
+// GET Nowplaying Movie
+const nowPlayingMovie = async (page = 1) => {
+    try {
+        const res = await get(`https://api.themoviedb.org/3/movie/now_playing?${API_KEY}&page=${page}`);
+        return res.data.results;
+    } catch {
+        throw new Error('Failed to call API');
+    }
+};
+
+// GET Upcoming Movie
+const upcomingMovie = async (page = 1) => {
+    try {
+        const res = await get(`https://api.themoviedb.org/3/movie/upcoming?${API_KEY}&page=${page}`);
+        return res.data.results;
+    } catch {
+        throw new Error('Failed to call API');
+    }
+};
+
 // GET Trending Movie
 const trendingMovie = async (window_time) => {
     try {
@@ -35,4 +55,4 @@ const topRatedMovie = async () => {
     }
 };
 
-export { popularMovie, trendingMovie, topRatedMovie };
+export { popularMovie, trendingMovie, topRatedMovie, nowPlayingMovie, upcomingMovie };

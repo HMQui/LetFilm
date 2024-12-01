@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import { popularMovie } from '../../../../../services/functions/api_call';
-import { moviePopularFilter } from '../../../../../services/functions/filterCallAPI/filterCallAPI';
-import MainCard from '../../../../../components/cards/MainCard';
+import { filterFunction } from '../../services/functions/filterCallAPI/filterCallAPI';
+import MainCard from '../cards/MainCard'
+import { Link } from 'react-router-dom';
 
-function ContentArea({ data = [] }) {
+function ContentArea({ data = [], option, type = "movie" }) {
     const [dataRender, setDataRender] = useState([]);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -27,8 +27,8 @@ function ContentArea({ data = [] }) {
                 else setLoadingMore(true); // Show loading for "Load More"
 
                 const fetchData = data && data.length > 0 
-                    ? await moviePopularFilter(data, page) 
-                    : await popularMovie(page);
+                    ? await filterFunction(data, page, type) 
+                    : await option(page);
 
                 setDataRender((prev) => (page === 1 ? fetchData : [...prev, ...fetchData])); // Reset or append
             } catch {
@@ -40,6 +40,7 @@ function ContentArea({ data = [] }) {
         };
 
         fetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data, page]);
 
     // Handle "Load More" button click
@@ -57,19 +58,20 @@ function ContentArea({ data = [] }) {
                 <div className="xl:w-g-10 lg:w-g-11 mobile:w-full flex flex-col justify-start items-center">
                     <div className="flex flex-row flex-wrap justify-center items-start gap-2">
                         {dataRender.map((render) => (
-                            <div
+                            <Link
+                                to={`/LetFilm/${type}/${render.id}`}
                                 key={render.id}
                                 className="mb-8 flex-shrink-0 border rounded-xl md:w-g-2.5 mobile:w-g-5.5 h-[410px] shadow-xl"
                             >
                                 <MainCard
                                     id={render.id}
                                     vote_average={render.vote_average}
-                                    title={render.title}
-                                    release_date={render.release_date}
+                                    title={render.title || render.original_name}
+                                    release_date={render.release_date || render.first_air_date}
                                     poster_path={render.poster_path}
                                     path={`${render.id}`}
                                 />
-                            </div>
+                            </Link>
                         ))}
                         {dataRender.length === 0 && <h1>No items</h1>}
                     </div>
@@ -94,4 +96,6 @@ export default ContentArea;
 
 ContentArea.propTypes = {
     data: PropTypes.array,
+    option: PropTypes.func,
+    type: PropTypes.string
 };

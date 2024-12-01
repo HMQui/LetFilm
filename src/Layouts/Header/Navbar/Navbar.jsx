@@ -53,6 +53,41 @@ function Navbar() {
                         trigger="mouseenter focus"
                         render={(attrs) => (
                             <ul
+                                tabIndex="-1"
+                                {...attrs}
+                                className="bg-white rounded py-2 w-[175px] shadow-lg dark:bg-gray-100 z-[1000000]"
+                            >
+                                <li className="py-2 px-4 text-base text-primary-1150 hover:bg-gray-50 dark:hover:text-amber-50 dark:hover:bg-primary-1150">
+                                    <Link to="/LetFilm/tv" className="block w-full h-full cursor-pointer">
+                                        Popular
+                                    </Link>
+                                </li>
+                                <li className="py-2 px-4 text-base text-primary-1150 hover:bg-gray-50 dark:hover:text-amber-50 dark:hover:bg-primary-1150">
+                                    <Link to="/LetFilm/tv/airing-today" className="block w-full h-full cursor-pointer">
+                                        Airing Today
+                                    </Link>
+                                </li>
+                                <li className="py-2 px-4 text-base text-primary-1150 hover:bg-gray-50 dark:hover:text-amber-50 dark:hover:bg-primary-1150">
+                                    <Link to="/LetFilm/tv/on-the-air" className="block w-full h-full cursor-pointer">
+                                        On The Air
+                                    </Link>
+                                </li>
+                                <li className="py-2 px-4 text-base text-primary-1150 hover:bg-gray-50 dark:hover:text-amber-50 dark:hover:bg-primary-1150">
+                                    <Link to="/LetFilm/tv/top-rated" className="block w-full h-full cursor-pointer">
+                                        Top Rated
+                                    </Link>
+                                </li>
+                            </ul>
+                        )}
+                    >
+                        <h3 className="px-5 text-base font-bold text-primary-50 cursor-pointer select-none">TV Shows</h3>
+                    </HeadlessTippy>
+                    <HeadlessTippy
+                        interactive={true}
+                        placement="bottom-start"
+                        trigger="mouseenter focus"
+                        render={(attrs) => (
+                            <ul
                                 tabIndex="1"
                                 {...attrs}
                                 className="bg-white rounded py-2 w-[175px] shadow-lg dark:bg-gray-100"

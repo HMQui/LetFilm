@@ -34,6 +34,28 @@ function MobileMenu() {
             ],
         },
         {
+            content: 'TV Shows',
+            children: [
+                'TV Shows',
+                {
+                    content: 'Popular',
+                    to: '/LetFilm/tv',
+                },
+                {
+                    content: 'Airing Today',
+                    to: '/LetFilm/tv/airing-today',
+                },
+                {
+                    content: 'On The Air',
+                    to: "/LetFilm/tv/on-the-air",
+                },
+                {
+                    content: 'Top Rated',
+                    to: "/LetFilm/tv/top-rated",
+                },
+            ],
+        },
+        {
             content: 'People',
             to: route.Movie,
         },

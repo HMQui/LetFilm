@@ -6,3 +6,6 @@ export { default as TVDetail } from './TVDetail';
 export { default as Search } from './Search';
 export { default as PeopleDetail } from './PeopleDetail'
 export { default as PeopleMain } from './PeopleMain'
+export { default as MovieNowPlaying } from './MovieNowPlaying'
+export { default as MovieUpcoming } from './MovieUpComing'
+export { default as MovieTopRated } from './MovieTopRated'

@@ -5,6 +5,7 @@ import { trendingMovie } from '../../../../../../services/functions/api_call';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import MainCard from '../../../../../../components/cards/MainCard';
+import { Link } from 'react-router-dom';
 
 function TrendingSideBarRender({ option }) {
     const [loading, setLoading] = useState(true);
@@ -36,7 +37,7 @@ function TrendingSideBarRender({ option }) {
                 <div className="px-3 relative w-full min-h-[450px] bg-white dark:bg-primary-1150 flex flex-row justify-start items-between gap-3 overflow-x-auto overflow-y-hidden custom-scrollbar dark:custom-scrollbar-dark">
                     {dataRender.map((render) => {
                         return (
-                            <div key={render.id} className='lg:w-[15%] md:w-[20%] sm:w-[30%] mobile:w-[40%] h-[90%] flex-shrink-0 flex items-center justify-center'>
+                            <Link to={`/LetFilm/movie/${render.id}`} key={render.id} className='lg:w-[15%] md:w-[20%] sm:w-[30%] mobile:w-[40%] h-[90%] flex-shrink-0 flex items-center justify-center'>
                                 <MainCard
                                     id={render.id}
                                     vote_average={render.vote_average}
@@ -45,7 +46,7 @@ function TrendingSideBarRender({ option }) {
                                     poster_path={render.poster_path}
                                     path={`movie/${render.id}`}
                                 />
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
