@@ -10,6 +10,10 @@ import {
     MovieNowPlaying,
     MovieUpcoming,
     MovieTopRated,
+    Tv,
+    TvAiringToday,
+    TvOnTheAir,
+    TvTopRated,
 } from '../pages';
 
 const root = '/LetFilm/';
@@ -38,6 +42,22 @@ export const publicRoute = [
     {
         component: MovieTopRated,
         path: root + 'movie/top-rated',
+    },
+    {
+        component: Tv,
+        path: root + 'tv',
+    },
+    {
+        component: TvAiringToday,
+        path: root + 'tv/airing-today',
+    },
+    {
+        component: TvOnTheAir,
+        path: root + 'tv/on-the-air',
+    },
+    {
+        component: TvTopRated,
+        path: root + 'tv/top-rated',
     },
     {
         component: Search,

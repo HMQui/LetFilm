@@ -186,7 +186,7 @@ function MoviePopularFilter({ getDataFromFilter, type = 'movie' }) {
                 <LanguagesFilter getDataFromLanguagesFilter={getDataFromLanguagesFilter} />
                 <ReleaseDate getDataFromReleaseDateFilter={getDataFromReleaseDateFilter} type={type}/>
                 <VoteAverageFilter getDataFromVoteAverageFilter={getDataFromVoteAverageFilter} />
-                <KeywordsFilter getDataFromKeywordsFilter={getDataFromKeywordsFilter} />
+                <KeywordsFilter getDataFromKeywordsFilter={getDataFromKeywordsFilter} type={type}/>
             </div>
         </div>
     );

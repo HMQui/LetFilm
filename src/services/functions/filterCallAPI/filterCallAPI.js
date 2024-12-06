@@ -62,9 +62,7 @@ const filterFunction = async (filterItem, page, type) => {
             }
         });
 
-        url += `&page=${page}`
-        console.log(url);
-        
+        url += `&page=${page}`        
         // Fetch data using `get` helper
         const res = await get(url);
 

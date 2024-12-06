@@ -15,10 +15,19 @@ const SORTING_LIST = [
     { title: 'Title (Z-A)', key: 'title.desc' },
 ];
 
-function SortBy({ getDataFromSortBy }) {
+function SortBy({ getDataFromSortBy, type }) {
     const [showFull, setShowFull] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
-    const [dataSubmit, setDataSubmit] = useState(SORTING_LIST[0]);    
+    const [dataSubmit, setDataSubmit] = useState(SORTING_LIST[0]);
+
+    useEffect(() => {
+        if (type === 'tv') {
+            SORTING_LIST[4].key = 'first_air_date.desc';
+            SORTING_LIST[5].key = 'first_air_date.asc';
+            SORTING_LIST[6].key = 'name.asc';
+            SORTING_LIST[7].key = 'name.desc';
+        }
+    }, [type]);
 
     // References
     const parentRef = useRef();
@@ -116,6 +125,7 @@ function SortBy({ getDataFromSortBy }) {
 
 SortBy.propTypes = {
     getDataFromSortBy: PropTypes.func.isRequired,
+    type: PropTypes.string,
 };
 
 export default memo(SortBy);

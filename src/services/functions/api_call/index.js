@@ -1,6 +1,6 @@
 import { popularPeople } from './people';
 import { popularMovie, trendingMovie, topRatedMovie, nowPlayingMovie, upcomingMovie } from './movie';
-import { topRatedTV } from './tv';
+import { topRatedTV, popularTV, airingTodayTV, onTheAirTV } from './tv';
 import { listGenres, Languges } from './collections';
 import { trendingAll } from './trending';
 import { queryMulti } from './query';
@@ -15,7 +15,10 @@ export {
     nowPlayingMovie,
     upcomingMovie,
     trendingAll,
+    popularTV,
     topRatedTV,
+    airingTodayTV,
+    onTheAirTV,
     queryMulti,
     topRatedMovie,
     getImg,

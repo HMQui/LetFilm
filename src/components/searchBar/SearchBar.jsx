@@ -40,7 +40,7 @@ function SearchBar({ getDataRender, title, type = 'movie' }) {
     return (
         <div className="lg:w-g-3 mobile:w-full flex flex-col justify-start items-center">
             <h2 className="text-3xl text-primary-1350 dark:text-primary-50 font-semibold">{title}</h2>
-            <SortBy getDataFromSortBy={getDataFromSortBy} />
+            <SortBy getDataFromSortBy={getDataFromSortBy} type={type}/>
             <FilterPart getDataFromFilter={getDataFromFilter} type={type}/>
             <button
                 onClick={() => getDataRender(dataSubmit)}

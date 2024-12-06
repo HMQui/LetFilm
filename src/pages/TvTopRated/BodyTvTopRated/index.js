@@ -1,0 +1,1 @@
+export { default as BodyTvTopRated } from './BodyTvTopRated'
