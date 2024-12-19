@@ -6,10 +6,10 @@ const get = async (api) => {
 };
 
 // [GET] popular people
-const popularPeople = async () => {
+const popularPeople = async (page = 1) => {
     try {
-        const res = await get('https://api.themoviedb.org/3/person/popular?' + API_KEY);
-        return res.data.results;
+        const res = await get('https://api.themoviedb.org/3/person/popular?' + API_KEY + `&page=${page}`);
+        return res.data;
     } catch {
         throw new Error('Fail to call API');
     }

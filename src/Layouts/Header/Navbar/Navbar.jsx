@@ -93,7 +93,7 @@ function Navbar() {
                                 className="bg-white rounded py-2 w-[175px] shadow-lg dark:bg-gray-100"
                             >
                                 <li className="py-2 px-4 text-base text-primary-1150 hover:bg-gray-50 dark:hover:text-amber-50 dark:hover:bg-primary-1150">
-                                    <Link to={route.Movie} className="block w-full h-full cursor-pointer">
+                                    <Link to='/LetFilm/people' className="block w-full h-full cursor-pointer">
                                         Popular People
                                     </Link>
                                 </li>

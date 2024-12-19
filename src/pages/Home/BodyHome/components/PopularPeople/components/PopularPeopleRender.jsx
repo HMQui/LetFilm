@@ -15,7 +15,8 @@ function PopularPeopleRender() {
         const fetch = async () => {
             try {
                 setLoading(true);
-                const data = await popularPeople();
+                var data = await popularPeople();
+                data = data.results;
                 setLoading(false);
                 setDataRender(() => {
                     return data.length > 8 ? data.slice(0, 8) : data;

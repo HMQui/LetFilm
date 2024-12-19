@@ -55,4 +55,14 @@ const topRatedMovie = async () => {
     }
 };
 
-export { popularMovie, trendingMovie, topRatedMovie, nowPlayingMovie, upcomingMovie };
+// GET Detail Movie
+const detailMovie = async (id) => {
+    try {
+        const res = await get('https://api.themoviedb.org/3/movie/' + id + '?' + API_KEY);
+        return res.data;
+    } catch {
+        throw new Error('Fail to call API');
+    }
+}
+
+export { popularMovie, trendingMovie, topRatedMovie, nowPlayingMovie, upcomingMovie, detailMovie };

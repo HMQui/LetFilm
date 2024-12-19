@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function ProgressCircle({ rate, bottom, left }) {
+function ProgressCircle({ rate, bottom, left, size = 48 }) {
     let gradientColor = '#fff';
     if (rate < 5) {
         gradientColor = '#ef4444';
@@ -8,34 +8,68 @@ function ProgressCircle({ rate, bottom, left }) {
         gradientColor = '#fcd34d';
     } else {
         gradientColor = '#10b981';
-    }    
+    }
 
     // Circle calculation based on rate
-    const circleCircumference = 2 * Math.PI * 18; // 18 is the radius
+    const radius = size / 2 - 6; // Subtract stroke width to calculate radius
+    const circleCircumference = 2 * Math.PI * radius;
     const progress = (1 - rate / 10) * circleCircumference;
 
     return (
-        <div 
-            className={`absolute h-12 w-12 bg-sky-950 rounded-full`}
-            style={{ bottom: bottom, left: left }}
+        <div
+            className="absolute rounded-full flex justify-center items-center"
+            style={{
+                bottom,
+                left,
+                width: size,
+                height: size,
+                backgroundColor: '#0f172a', // Replacing `bg-sky-950`
+            }}
         >
-            <div className="rounded-full h-11 w-11 flex justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="rounded-full h-8 w-8"></div>
+            <div
+                className="rounded-full flex justify-center items-center absolute"
+                style={{
+                    width: size - 2,
+                    height: size - 2,
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                }}
+            >
+                <div
+                    className="rounded-full"
+                    style={{
+                        width: size / 1.5,
+                        height: size / 1.5,
+                    }}
+                ></div>
             </div>
-            <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[0.7rem] font-semibold text-primary-50 select-none">
+            <span
+                className="absolute text-[0.7rem] font-semibold text-primary-50 select-none"
+                style={{
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                }}
+            >
                 {rate !== 0 ? `${Math.round(rate * 10)}%` : 'Unknow'}
             </span>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
-                width="48px"
-                height="48px"
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute"
+                style={{
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                }}
+                width={`${size}px`}
+                height={`${size}px`}
             >
                 <circle
-                    cx="24"
-                    cy="24"
-                    r="18"
+                    cx={size / 2}
+                    cy={size / 2}
+                    r={radius}
                     fill="none"
                     stroke={gradientColor}
                     className="stroke-[6px] stroke-linecap-round"
@@ -57,4 +91,5 @@ ProgressCircle.propTypes = {
     rate: PropTypes.number.isRequired,
     bottom: PropTypes.string,
     left: PropTypes.string,
-}
+    size: PropTypes.number, // New optional prop
+};

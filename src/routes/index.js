@@ -14,6 +14,7 @@ import {
     TvAiringToday,
     TvOnTheAir,
     TvTopRated,
+    People,
 } from '../pages';
 
 const root = '/LetFilm/';
@@ -58,6 +59,10 @@ export const publicRoute = [
     {
         component: TvTopRated,
         path: root + 'tv/top-rated',
+    },
+    {
+        component: People,
+        path: root + 'people'
     },
     {
         component: Search,

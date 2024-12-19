@@ -1,5 +1,5 @@
 import { popularPeople } from './people';
-import { popularMovie, trendingMovie, topRatedMovie, nowPlayingMovie, upcomingMovie } from './movie';
+import { popularMovie, trendingMovie, topRatedMovie, nowPlayingMovie, upcomingMovie, detailMovie } from './movie';
 import { topRatedTV, popularTV, airingTodayTV, onTheAirTV } from './tv';
 import { listGenres, Languges } from './collections';
 import { trendingAll } from './trending';
@@ -14,6 +14,7 @@ export {
     trendingMovie,
     nowPlayingMovie,
     upcomingMovie,
+    detailMovie,
     trendingAll,
     popularTV,
     topRatedTV,

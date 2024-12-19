@@ -57,7 +57,7 @@ function MobileMenu() {
         },
         {
             content: 'People',
-            to: route.Movie,
+            to: "/LetFilm/people",
         },
         {
             content: 'More',

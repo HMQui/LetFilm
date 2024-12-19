@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { Header, Footer } from '../../Layouts';
 
 import { ButtonScrollUpPage } from '../../Layouts';
-import BodyMovieDetail from './BodyMovieDetail';
+import { BodyPeople } from './BodyPeople';
 
-function Movie() {
+function People() {
     useEffect(() => {
         // Scroll to the top when the page loads or is refreshed
         window.document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -13,11 +13,11 @@ function Movie() {
     return (
         <main className="flex flex-col min-h-screen dark:bg-primary-1250 relative w-full z-2 overscroll-x-none">
             <Header/>
-            <ButtonScrollUpPage />
-            <BodyMovieDetail />
+            <ButtonScrollUpPage/>
+            <BodyPeople/>
             <Footer/>
         </main>
     );
 }
 
-export default Movie;
+export default People;
